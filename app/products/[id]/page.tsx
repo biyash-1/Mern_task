@@ -78,7 +78,9 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto py-12  rounded-xl dark:text-slate-200 ">
+    <div className="h-screen dark:bg-gray-900">
+
+    <div className="max-w-4xl mx-auto py-20  rounded-xl dark:text-slate-200 ">
       <div className="flex flex-col md:flex-row gap-6">
         <img
           src={product.image}
@@ -156,6 +158,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

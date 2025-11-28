@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ModeToggle } from "./ModeToogle";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from "@/app/store/useCart";
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const { items } = useCart();
@@ -54,35 +55,50 @@ const Header = () => {
         </ul>
 
         <div className="hidden md:flex items-center gap-4">
-          <div className="mr-3">
-            <div className="relative">
-              <Link href="/cart">
-                <FaShoppingCart
-                  size={24}
-                  className="text-gray-700 dark:text-gray-300"
-                />
-              </Link>
-              {items.length > 0 && (
-                <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                  {items.length}
-                </span>
-              )}
-            </div>
+          <div className="relative mr-4">
+            <Link href="/cart">
+              <FaShoppingCart
+                size={24}
+                className="text-gray-700 dark:text-gray-300"
+              />
+            </Link>
+            {items.length > 0 && (
+              <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {items.length}
+              </span>
+            )}
           </div>
 
           <ModeToggle />
-          <Button className="">Login</Button>
+          <Button>Login</Button>
         </div>
 
-        <button
-          className="md:hidden text-gray-700 dark:text-gray-300"
-          onClick={() => setOpen(!open)}
-        >
-          <Menu className="w-7 h-7" />
-        </button>
+        <div className="flex md:hidden items-center gap-3">
+          <div className="relative">
+            <Link href="/cart">
+              <FaShoppingCart
+                size={24}
+                className="text-gray-700 dark:text-gray-300"
+              />
+            </Link>
+            {items.length > 0 && (
+              <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {items.length}
+              </span>
+            )}
+          </div>
+
+          <ModeToggle />
+
+          <button
+            className="text-gray-700 dark:text-gray-300"
+            onClick={() => setOpen(!open)}
+          >
+            <Menu className="w-7 h-7" />
+          </button>
+        </div>
       </nav>
 
-   
       {open && (
         <div className="md:hidden px-4 pb-4 bg-white dark:bg-gray-900 transition-colors">
           <ul className="flex flex-col gap-4 text-lg font-medium text-gray-700 dark:text-gray-300">
