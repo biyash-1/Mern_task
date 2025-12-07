@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "react-hot-toast";
-
+import Providers from "./providers";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -38,7 +38,10 @@ export default function RootLayout({
             disableTransitionOnChange
           >
         <Header/>
+        <Providers>
+
         {children}
+        </Providers>
         </ThemeProvider>
       </body>
     </html>
