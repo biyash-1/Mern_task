@@ -11,7 +11,7 @@ export default function HomePage() {
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
           Welcome to{" "}
           <span className="">
-            BS <span className="text-yellow-700">Store</span>{" "}
+            BS <span className="text-yellow-700">Store it</span>{" "}
           </span>
         </h1>
         <p className="text-lg md:text-2xl mb-8">
